@@ -20,6 +20,22 @@ This document tracks the overall learning progress.
 # Module 1 — OOP Foundations
 
 - [ ] Classes and Objects
+Classes and Objects (Car)
+
+System Modeling (Online Shopping)
+
+Encapsulation (Bank Account)
+
+Inheritance (Vehicle Hierarchy)
+
+Polymorphism (Payment Methods)
+
+Abstraction (Notification System)
+
+Composition (Computer)
+
+Aggregation (Department & Employee)
+
 - [ ] UML System Modeling
 - [ ] Encapsulation
 - [ ] Inheritance

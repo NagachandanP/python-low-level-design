@@ -20,6 +20,14 @@ The objective is not only to solve interview-style design problems but to develo
 
 Every concept is taught by evolving a simple implementation into a clean, maintainable, and scalable design.
 
+The repository uses the most appropriate domain example for each concept.
+
+Examples are intentionally chosen to maximize understanding.
+
+Concepts are independent of domains.
+
+Students should learn the design principle, not memorize the example.
+
 ---
 
 # Learning Philosophy
