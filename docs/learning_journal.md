@@ -34,6 +34,12 @@ Most successful systems evolve through continuous refactoring as requirements be
 
 Learning to recognize **when** a design needs improvement is as valuable as knowing **how** to improve it.
 
+
+A good teacher chooses examples that clarify the concept.
+
+A good engineer recognizes that design principles apply across domains.
+
+The repository will intentionally use different domains for different concepts instead of forcing one example throughout the curriculum.
 ---
 
 ## Next Goal
