@@ -182,17 +182,190 @@ The following improvements will be introduced in future lessons:
 
 ---
 
-# Interview Questions
+# Interview Corner
 
-- What is a Class?
-- What is an Object?
-- What is an Instance?
-- What is the purpose of `self`?
-- What is `__init__()`?
-- What is the difference between State and Behavior?
-- Why should methods belong inside the class?
-- What is `__repr__()`?
-- Why are unit tests important?
+## 🟢 Basic Questions
+
+### 1. What is a Class?
+
+**Answer:**
+
+A class is a blueprint or template used to create objects. It defines the attributes (state) and methods (behavior) that every object created from it will have.
+
+**Example**
+
+```python
+class Car:
+    pass
+```
+
+---
+
+### 2. What is an Object?
+
+**Answer:**
+
+An object is an instance of a class. Each object has its own independent state while sharing the behavior defined by the class.
+
+**Example**
+
+```python
+car1 = Car("Toyota", "Corolla", 2024, "White")
+car2 = Car("Honda", "City", 2023, "Black")
+```
+
+Although both are `Car` objects, they maintain different data.
+
+---
+
+### 3. What is the purpose of `self`?
+
+**Answer:**
+
+`self` refers to the current object instance. It allows methods to access and modify that object's attributes and call its other methods.
+
+Without `self`, Python would not know which object's data should be accessed.
+
+---
+
+### 4. What is the purpose of `__init__()`?
+
+**Answer:**
+
+`__init__()` is the constructor of a class. It is automatically called when an object is created and is responsible for initializing the object's state.
+
+---
+
+### 5. What is the purpose of `__repr__()`?
+
+**Answer:**
+
+`__repr__()` returns a developer-friendly representation of an object. It is mainly used for debugging and logging.
+
+Instead of displaying:
+
+```text
+<__main__.Car object at 0x000001F8A23B4D90>
+```
+
+it displays:
+
+```text
+Car(brand='Toyota', model='Corolla', year=2024, color='White', current_speed=0)
+```
+
+---
+
+## 🟡 Intermediate Questions
+
+### 6. What is the difference between State and Behavior?
+
+**Answer:**
+
+**State** represents the data stored inside an object.
+
+Example:
+
+- brand
+- model
+- year
+- current_speed
+
+**Behavior** represents the actions an object can perform.
+
+Example:
+
+- accelerate()
+- brake()
+- stop()
+
+A well-designed object combines both state and behavior.
+
+---
+
+### 7. Why should behavior be inside the class?
+
+**Answer:**
+
+Keeping behavior inside the class follows the principles of Object-Oriented Programming by keeping data and the operations on that data together.
+
+Instead of:
+
+```python
+speed += 20
+```
+
+we write:
+
+```python
+car.accelerate(20)
+```
+
+This improves readability, maintainability, and encapsulation.
+
+---
+
+### 8. Why does every new Car start with `current_speed = 0`?
+
+**Answer:**
+
+This is a design decision. A newly created car should begin in a valid initial state. The constructor ensures every object starts consistently.
+
+---
+
+## 🔴 Advanced Questions
+
+### 9. Is the current implementation production-ready?
+
+**Answer:**
+
+No.
+
+The class currently allows invalid inputs, for example:
+
+```python
+car.accelerate(-50)
+```
+
+or
+
+```python
+Car("", "", -1, "")
+```
+
+There is no validation yet.
+
+This is intentional because future lessons will introduce encapsulation, validation, and SOLID principles to improve the design incrementally.
+
+---
+
+### 10. How would you improve this class?
+
+**Answer:**
+
+Some possible improvements include:
+
+- Encapsulate attributes using `@property`
+- Validate constructor inputs
+- Prevent negative speed
+- Raise meaningful exceptions for invalid operations
+- Add more unit tests covering edge cases
+- Refactor the design using SOLID principles
+
+---
+
+### 11. Why are unit tests important?
+
+**Answer:**
+
+Unit tests verify that each unit of code behaves as expected.
+
+Benefits include:
+
+- Detect regressions after code changes
+- Increase confidence during refactoring
+- Document expected behavior
+- Improve software quality
 
 ---
 
@@ -207,14 +380,78 @@ The following improvements will be introduced in future lessons:
 
 ---
 
-# Next Lesson
+# Lesson Summary
 
-**Lesson 02 — System Modeling**
+## 📌 What We Built
 
-We'll learn how to represent software designs visually using UML diagrams, including:
+In this lesson, we designed and implemented our first object-oriented model using a `Car` class.
+
+The implementation includes:
+
+- A `Car` class with state and behavior
+- Constructor (`__init__`)
+- `__repr__()` for object representation
+- Business methods (`accelerate`, `brake`, `stop`, `display_information`)
+- Unit tests using Python's `unittest`
+- UML Class Diagram using Mermaid
+- Documentation and personal notes
+
+---
+
+## 📚 Concepts Mastered
+
+- Classes
+- Objects
+- Instances
+- Constructors (`__init__`)
+- `self`
+- Instance Variables
+- State vs Behavior
+- Object Representation (`__repr__`)
+- Basic Unit Testing
+- UML Class Diagram
+
+---
+
+## 🏗 Design Evolution
+
+```
+Version 1 → Empty Car class
+        ↓
+Version 2 → Added constructor
+        ↓
+Version 3 → Added __repr__()
+        ↓
+Version 4 → Added object behavior
+        ↓
+Version 5 → Added unit tests
+        ↓
+Version 6 → Added UML & Documentation
+```
+
+---
+
+## 🎯 Key Takeaways
+
+- A class acts as a blueprint for creating objects.
+- Every object maintains its own independent state.
+- Methods define the behavior of an object.
+- Constructors ensure objects start in a valid initial state.
+- Testing verifies correctness and protects against regressions.
+- UML diagrams communicate the design before and alongside implementation.
+
+---
+
+## 🚀 Ready for the Next Lesson?
+
+✅ Yes
+
+**Next Lesson:** `02_system_modeling`
+
+In the next lesson, we'll learn how to think like a software designer by creating:
 
 - Class Diagrams
 - Sequence Diagrams
 - Use Case Diagrams
 
-Before writing code, we should first learn how to design the system.
+before writing production code.
