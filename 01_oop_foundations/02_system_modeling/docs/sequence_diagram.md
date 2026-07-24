@@ -1,45 +1,56 @@
-# Sequence Diagram - Borrow a Book
+# Sequence Diagram - Place Order
 
 ## Problem Statement
 
-Illustrate the interaction between the objects involved when a member borrows a book.
+Illustrate the interaction between objects when a customer places an order.
+
+Unlike the Class Diagram, this diagram focuses on **runtime communication**.
 
 ---
+
+## Mermaid UML
 
 ```mermaid
 sequenceDiagram
 
-actor Member
+actor Customer
 
-participant Library
-participant Book
+participant ShoppingSystem
+participant Product
 
-Member->>Library: Search Book
-Library-->>Member: Book Found
+Customer->>ShoppingSystem: Search Product
 
-Member->>Library: Borrow Book
+ShoppingSystem-->>Customer: Product Found
 
-Library->>Book: Check Availability
+Customer->>ShoppingSystem: Place Order
 
-Book-->>Library: Available
+ShoppingSystem->>Product: Check Stock
 
-Library->>Book: Mark as Borrowed
+Product-->>ShoppingSystem: In Stock
 
-Book-->>Library: Success
+ShoppingSystem->>Product: Reduce Stock
 
-Library-->>Member: Book Issued
+Product-->>ShoppingSystem: Stock Updated
+
+ShoppingSystem-->>Customer: Order Confirmed
 ```
 
 ---
 
-## Observation
+# Observation
 
-This diagram focuses on the **runtime interaction** between objects.
+This diagram answers:
 
-It answers:
-
-- Which object communicates first?
+- Which object starts the interaction?
+- Which object communicates next?
 - What messages are exchanged?
-- In what sequence do they occur?
+- In what order do they occur?
 
-Unlike a Class Diagram, it emphasizes **behavior over structure**.
+---
+
+# Key Takeaways
+
+- Sequence Diagrams represent runtime behavior.
+- Time flows from top to bottom.
+- Horizontal arrows represent messages exchanged between objects.
+- They are excellent for explaining workflows during interviews.

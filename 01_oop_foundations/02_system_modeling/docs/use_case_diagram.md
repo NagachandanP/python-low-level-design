@@ -1,39 +1,42 @@
-# Use Case Diagram - Library Management System
+# Use Case Diagram - Online Shopping System
 
 ## Problem Statement
 
-Model the interactions between users and the Library Management System.
+Model the interactions between users and the Online Shopping System.
 
 ---
 
 ```mermaid
 flowchart LR
 
-Member((Member))
-Librarian((Librarian))
+Customer((Customer))
+Admin((Admin))
 
-Search([Search Book])
-Borrow([Borrow Book])
-Return([Return Book])
+Search([Search Product])
+Order([Place Order])
+Cancel([Cancel Order])
 
-Add([Add Book])
-Remove([Remove Book])
-Update([Update Book])
+Add([Add Product])
+Remove([Remove Product])
+Update([Update Product])
 
-Member --> Search
-Member --> Borrow
-Member --> Return
+Customer --> Search
+Customer --> Order
+Customer --> Cancel
 
-Librarian --> Add
-Librarian --> Remove
-Librarian --> Update
+Admin --> Add
+Admin --> Remove
+Admin --> Update
 ```
 
 ---
 
 ## Observation
 
-This diagram answers **WHO** uses the system and **WHAT** they can do.
+This diagram answers:
+
+- Who uses the system?
+- What actions can they perform?
 
 It does **not** describe:
 
@@ -41,4 +44,13 @@ It does **not** describe:
 - Object interactions
 - Execution order
 
-Those will be covered by other UML diagrams.
+Those are represented using other UML diagrams.
+
+---
+
+## Key Takeaways
+
+- Actors are external entities.
+- Use Cases represent user goals.
+- One actor can perform multiple use cases.
+- This diagram captures system functionality from the user's perspective.

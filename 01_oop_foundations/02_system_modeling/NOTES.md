@@ -1,37 +1,47 @@
-# Lesson Notes - System Modeling
+# Lesson Notes - UML System Modeling
 
 ## Key Learnings
 
 - UML is used before implementation.
-- Use Case Diagrams identify actors and system functionality.
-- Class Diagrams model the static structure.
-- Sequence Diagrams model object interactions.
-- Activity Diagrams model business workflows.
+- Different diagrams answer different questions.
+- Use Case Diagrams focus on actors.
+- Class Diagrams focus on system structure.
+- Sequence Diagrams focus on runtime interactions.
+- Activity Diagrams focus on workflows.
 
 ---
 
-## Easy Way to Remember
+# Easy Way to Remember
 
 | Diagram | Think |
 |----------|-------|
 | Use Case | WHO? |
 | Class | WHAT? |
-| Sequence | HOW do objects interact? |
-| Activity | HOW does the business process flow? |
+| Sequence | HOW objects communicate? |
+| Activity | HOW business flows? |
 
 ---
 
-## Common Mistakes
+# Common Mistakes
 
-- Confusing Class and Sequence Diagrams.
-- Adding implementation details to Use Case Diagrams.
-- Treating Activity Diagrams as object interaction diagrams.
+- Mixing Sequence and Activity Diagrams.
+- Treating Use Case Diagrams as Class Diagrams.
+- Forgetting that UML is independent of programming languages.
 
 ---
 
-## Future Improvements
+# Personal Notes
 
-In future projects, UML diagrams will become more detailed by including:
+- Design first.
+- Code second.
+- UML improves communication.
+- Requirements drive design.
+
+---
+
+# Future Improvements
+
+Later lessons will introduce:
 
 - Multiplicity
 - Composition

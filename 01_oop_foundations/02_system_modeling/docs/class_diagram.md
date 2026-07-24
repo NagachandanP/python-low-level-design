@@ -1,55 +1,97 @@
-# Class Diagram - Library Management System
+# Class Diagram - Online Shopping System
 
 ## Problem Statement
 
-Identify the core objects (classes) involved in a simple Library Management System and show how they are related.
+Identify the core classes required to model a simple Online Shopping System.
+
+Unlike the Use Case Diagram, this diagram focuses on the **structure** of the system rather than user interactions.
 
 ---
+
+## Requirement Analysis
+
+### Actors
+
+- Customer
+- Admin
+
+### Candidate Classes
+
+- Customer
+- Product
+- ShoppingSystem
+- Admin
+
+### Candidate Methods
+
+- searchProduct()
+- placeOrder()
+- cancelOrder()
+- addProduct()
+- removeProduct()
+- updateProduct()
+
+---
+
+## Mermaid UML
 
 ```mermaid
 classDiagram
 
-class Member {
-    +member_id
-    +name
-    +borrow_book()
-    +return_book()
+class Customer {
+    +customerId: int
+    +name: str
+    +email: str
+
+    +searchProduct()
+    +placeOrder()
+    +cancelOrder()
 }
 
-class Book {
-    +book_id
-    +title
-    +author
-    +is_available
+class Product {
+    +productId: int
+    +name: str
+    +price: float
+    +stock: int
 }
 
-class Librarian {
-    +employee_id
-    +name
-    +add_book()
-    +remove_book()
-    +update_book()
+class Admin {
+    +employeeId: int
+    +name: str
+
+    +addProduct()
+    +removeProduct()
+    +updateProduct()
 }
 
-class Library {
-    +books
-    +members
-    +search_book()
+class ShoppingSystem {
+    +products
+    +customers
+
+    +searchProduct()
 }
 
-Member --> Book : borrows
-Librarian --> Library : manages
-Library --> Book : contains
+Customer --> Product : orders
+Admin --> ShoppingSystem : manages
+ShoppingSystem --> Product : contains
 ```
 
 ---
 
-## Observation
+# Observation
 
 This diagram answers:
 
-- What are the important classes?
+- What classes exist?
 - What responsibilities do they have?
 - How are they related?
 
-It does **not** show the order in which methods are called.
+It does **not** explain the runtime order of execution.
+
+---
+
+# Key Takeaways
+
+- Nouns in requirements often become classes.
+- Verbs often become methods.
+- Class Diagrams model structure, not behavior.

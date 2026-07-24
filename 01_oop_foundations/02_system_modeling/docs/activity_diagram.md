@@ -1,27 +1,31 @@
-# Activity Diagram - Borrow a Book
+# Activity Diagram - Place Order
 
 ## Problem Statement
 
-Illustrate the business workflow for borrowing a book.
+Model the business workflow involved in placing an order.
+
+Unlike the Sequence Diagram, this diagram focuses on **business activities** rather than object communication.
 
 ---
+
+## Mermaid UML
 
 ```mermaid
 flowchart TD
 
 Start([Start])
 
-Search[Search Book]
+Search[Search Product]
 
-Available{Book Available?}
+Available{Product Available?}
 
-Borrow[Borrow Book]
+Order[Place Order]
 
-Update[Update Book Status]
+Update[Update Inventory]
 
-Success[Book Issued]
+Confirm[Order Confirmed]
 
-Failure[Notify Member]
+Notify[Notify Customer]
 
 End([End])
 
@@ -29,27 +33,35 @@ Start --> Search
 
 Search --> Available
 
-Available -- Yes --> Borrow
+Available -- Yes --> Order
 
-Borrow --> Update
+Order --> Update
 
-Update --> Success
+Update --> Confirm
 
-Success --> End
+Confirm --> End
 
-Available -- No --> Failure
+Available -- No --> Notify
 
-Failure --> End
+Notify --> End
 ```
 
 ---
 
-## Observation
+# Observation
 
-This diagram models the **business process**, not the software objects.
+This diagram answers:
 
-It answers:
-
-- What steps are involved?
+- What business steps occur?
 - What decisions are made?
 - What are the possible outcomes?
+
+It does **not** show which objects communicate.
+
+---
+
+# Key Takeaways
+
+- Activity Diagrams represent workflows.
+- Decision nodes create multiple execution paths.
+- They are useful for understanding business processes before implementation.

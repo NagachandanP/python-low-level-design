@@ -1,47 +1,46 @@
-# Lesson 02 — System Modeling
+# Lesson 02 — UML System Modeling
 
-> **Module:** OOP Foundations  
-> **Status:** ✅ Completed  
-> **Difficulty:** Beginner  
+> **Module:** OOP Foundations
+> **Status:** ✅ Completed
+> **Difficulty:** Beginner
 > **Current Version:** V4
 
 ---
 
 # Problem Statement
 
-Before writing code, software engineers first model the system.
+Before writing software, engineers first design the system.
 
-System modeling helps us understand:
+Writing code without understanding the system often leads to poor architecture, duplicated logic, and unnecessary refactoring.
 
-- Who uses the system?
-- What objects exist?
-- How objects communicate?
-- How the business workflow proceeds?
+In this lesson, we model a simple **Online Shopping System** using UML diagrams.
 
-In this lesson, we model a simple **Library Management System** using UML.
+The goal is to understand the system from multiple perspectives before implementing it in Python.
 
 ---
 
 # Learning Objectives
 
-After completing this lesson, you will be able to:
+By the end of this lesson, you will be able to:
 
 - Understand why UML is used.
-- Differentiate between the four most important UML diagrams.
-- Draw UML using Mermaid.
-- Convert requirements into software models.
-- Prepare UML diagrams commonly discussed in LLD interviews.
+- Identify actors from requirements.
+- Identify candidate classes.
+- Understand object interactions.
+- Model business workflows.
+- Draw UML diagrams using Mermaid.
+- Explain UML diagrams during interviews.
 
 ---
 
-# Evolution
+# Version Evolution
 
 | Version | Evolution |
 |----------|-----------|
-| V1 | Identified system requirements |
-| V2 | Created Use Case Diagram |
-| V3 | Created Class Diagram |
-| V4 | Created Sequence & Activity Diagrams |
+| V1 | Requirement Analysis |
+| V2 | Use Case Diagram |
+| V3 | Class Diagram |
+| V4 | Sequence & Activity Diagrams |
 
 ---
 
@@ -64,20 +63,28 @@ After completing this lesson, you will be able to:
 
 ---
 
+# Why UML?
+
+UML (Unified Modeling Language) helps software engineers visualize and communicate system designs before implementation.
+
+Instead of immediately writing code, we first answer important design questions.
+
+---
+
 # Diagram Selection Guide
 
-| If you want to know... | Use |
-|-------------------------|-----|
+| Question | Diagram |
+|-----------|----------|
 | Who uses the system? | Use Case Diagram |
 | What classes exist? | Class Diagram |
-| How objects interact? | Sequence Diagram |
-| How the workflow proceeds? | Activity Diagram |
+| How do objects communicate? | Sequence Diagram |
+| How does the business process flow? | Activity Diagram |
 
 ---
 
 # Design Process
 
-```
+```text
 Requirements
       ↓
 Identify Actors
@@ -86,19 +93,50 @@ Identify Classes
       ↓
 Identify Relationships
       ↓
-Model Interactions
+Identify Interactions
       ↓
 Draw UML
+      ↓
+Start Coding
 ```
 
 ---
 
-# Key Takeaways
+# How to View the Diagrams
 
-- UML helps visualize software before implementation.
-- Different UML diagrams answer different design questions.
-- Modeling first reduces design mistakes during implementation.
-- Mermaid allows UML diagrams to render directly on GitHub.
+GitHub automatically renders Mermaid diagrams.
+
+Simply open the corresponding Markdown file inside the **docs** folder.
+
+---
+
+# Current Limitations
+
+The diagrams intentionally model only a small portion of an Online Shopping System.
+
+Advanced concepts like:
+
+- Payment
+- Inventory
+- Shipping
+- Coupons
+- Authentication
+
+will be introduced in later projects.
+
+---
+
+# Future Improvements
+
+Later projects will include:
+
+- Multiplicity
+- Composition
+- Aggregation
+- Inheritance
+- Interfaces
+- Design Patterns
+- Microservice boundaries
 
 ---
 
@@ -108,13 +146,17 @@ Draw UML
 
 ### What is UML?
 
-**Answer:** UML (Unified Modeling Language) is a standard visual language used to model software systems before implementation.
+**Answer**
+
+UML (Unified Modeling Language) is a standard visual language used to model software systems before implementation.
 
 ---
 
-### Why do we create UML diagrams?
+### Why is UML used?
 
-**Answer:** To communicate the design clearly, identify potential issues early, and establish a common understanding before writing code.
+**Answer**
+
+UML helps developers visualize, discuss, and validate system designs before writing code.
 
 ---
 
@@ -122,33 +164,36 @@ Draw UML
 
 ### Difference between Class Diagram and Sequence Diagram?
 
-**Answer:**
+**Answer**
 
-- Class Diagram → Static structure (classes and relationships)
-- Sequence Diagram → Runtime interaction (message flow)
+A Class Diagram shows the static structure of the system.
+
+A Sequence Diagram shows how objects communicate during runtime.
 
 ---
 
-### Why not start coding immediately?
+### Why should software be designed before coding?
 
-**Answer:**
+**Answer**
 
-Designing first helps identify missing requirements, improve architecture, and reduce costly refactoring later.
+Designing first helps identify missing requirements, improves architecture, reduces future refactoring, and allows teams to communicate effectively.
 
 ---
 
 ## 🔴 Advanced
 
-### Which UML diagrams are most useful in Low-Level Design interviews?
+### Which UML diagrams are most useful for Low-Level Design interviews?
 
-**Answer:**
+**Answer**
+
+The four most commonly used diagrams are:
 
 - Use Case Diagram
 - Class Diagram
 - Sequence Diagram
 - Activity Diagram
 
-These diagrams are sufficient for explaining most LLD interview problems.
+These are sufficient for explaining most interview problems.
 
 ---
 
@@ -156,12 +201,14 @@ These diagrams are sufficient for explaining most LLD interview problems.
 
 ## What We Built
 
+Using a simple **Online Shopping System**, we created:
+
 - Use Case Diagram
 - Class Diagram
 - Sequence Diagram
 - Activity Diagram
 
-using Mermaid.js.
+---
 
 ## Concepts Mastered
 
@@ -169,18 +216,33 @@ using Mermaid.js.
 - Actors
 - Classes
 - Relationships
-- Object Interaction
+- Runtime Interaction
 - Business Workflow
 
 ---
 
-## Next Lesson
+## Key Takeaways
 
-**Lesson 03 — Encapsulation**
+- UML should be created before implementation.
+- Every UML diagram answers a different design question.
+- Modeling first improves software quality.
+- Mermaid makes UML documentation GitHub-friendly.
 
-We'll improve our `Car` class by:
+---
 
-- Making attributes private
-- Using `@property`
-- Adding validation
-- Preventing invalid object state
+# Next Lesson
+
+## Lesson 03 — Encapsulation
+
+Example:
+
+**Bank Account**
+
+Topics:
+
+- Public vs Private Members
+- Name Mangling
+- Getter & Setter
+- @property
+- Validation
+- Protecting Object State
